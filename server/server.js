@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 
 const app = express();
-const PORT = process.env.PORT || 3004;
+const PORT = process.env.PORT || 3333;
 
 // Configuration
 const JEWEL_ML_INTEGRATION_ID = '67fd95260740ccc4ec658d03';
