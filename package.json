@@ -1,0 +1,26 @@
+{
+  "name": "jewel-simple-nextjs-15-bff-react-swiper",
+  "version": "1.0.0",
+  "description": "Jewel ML example with Backend-for-Frontend architecture (Next.js 15 version)",
+  "private": true,
+  "scripts": {
+    "dev": "npm run dev:all",
+    "dev:all": "npm run server:install && npm run server:start & npm run nextjs:install && sleep 3 && npm run nextjs:start",
+    "dev:server": "cd server && npm run dev",
+    "dev:nextjs": "cd nextjs && npm run dev:port",
+    "server:install": "cd server && npm install",
+    "nextjs:install": "cd nextjs && npm install",
+    "server:start": "cd server && npm start",
+    "nextjs:start": "cd nextjs && npm run dev:port",
+    "build": "cd nextjs && npm run build",
+    "start": "npm run dev:all"
+  },
+  "workspaces": [
+    "server",
+    "nextjs"
+  ],
+  "engines": {
+    "node": ">=18.18.0",
+    "npm": ">=9.0.0"
+  }
+}
