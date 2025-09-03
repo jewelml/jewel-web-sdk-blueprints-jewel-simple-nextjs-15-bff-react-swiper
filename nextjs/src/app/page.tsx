@@ -20,8 +20,8 @@ async function fetchModelData(models: string[], itemId: string): Promise<ModelRe
   try {
     // Call BFF server instead of directly calling Jewel ML API
     // Detect CodeSandbox environment and use appropriate URL
-    const baseUrl = process.env.CODESANDBOX_HOST 
-      ? `https://${process.env.CODESANDBOX_HOST}-3333.csb.app`
+    const baseUrl = process.env.HOSTNAME 
+      ? `https://${process.env.HOSTNAME}-3333.csb.app`
       : 'http://localhost:3333';
     
     const bffUrl = `${baseUrl}/api/recommendations?item_id=${encodeURIComponent(itemId)}&models=${encodeURIComponent(models.join(','))}`;
