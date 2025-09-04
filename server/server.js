@@ -12,6 +12,14 @@ const JEWEL_ML_BASE_URL = 'https://repersonalize.jewelml.io/c/p';
 app.use(cors());
 app.use(express.json());
 
+// Root redirect to Next.js application
+app.get('/', (req, res) => {
+  const nextjsUrl = process.env.HOSTNAME 
+    ? `https://${process.env.HOSTNAME}-3000.csb.app`
+    : 'http://localhost:3000';
+  res.redirect(nextjsUrl);
+});
+
 // Health check endpoint
 app.get('/health', (req, res) => {
   res.json({ status: 'ok', service: 'jewel-bff-server-nextjs15' });
